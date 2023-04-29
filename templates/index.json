@@ -1,9 +1,13 @@
 {
-    "sections": {
-      "header": {
-        "type": "header",
-        "settings": {}
-      }
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "settings": {}
     },
-    "order": ["header"]
-  }
+    "header": {
+      "type": "header",
+      "settings": {}
+    }
+  },
+  "order": ["header", "announcement-bar"]
+}
