@@ -20,10 +20,14 @@
     {% when 'button' %}
       <div class="buttons">
         {% if block.settings.richtext_button_label_1 != blank %}
-          <button class="button primary-button">{{ block.settings.richtext_button_label_1 }}</button>
+          <a href="{{ block.settings.richtext_button_url_1 }}" class="button primary-button">
+            {{- block.settings.richtext_button_label_1 -}}
+          </a>
         {% endif %}
         {% if block.settings.richtext_button_label_2 != blank %}
-          <button class="button secondary-button">{{ block.settings.richtext_button_label_2 }}</button>
+          <a href="{{ block.settings.richtext_button_url_2 }}" class="button secondary-button">
+            {{- block.settings.richtext_button_label_2 -}}
+          </a>
         {% endif %}
       </div>
   {% endcase %}
