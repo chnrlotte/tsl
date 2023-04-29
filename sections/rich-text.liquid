@@ -6,61 +6,64 @@
     an example description. this is an example description. this is an example description.
   </p>
   <div class="buttons">
-    <a href="" class="primary-button">example</button>
-    <a href="" class="secondary-button">example</button>
+    <a href="" class="primary-button">example</a>
+    <a href="" class="secondary-button">example</a>
   </div>
 </div>
 
 <div class="rich-text">
-    {% for block in section.blocks %}
-      {% case block.type %}
-        {% when 'text' %}
-          <h1>{{ block.settings.richtext_heading }}</h1>
-        {% when 'richtext' %}
-          <p>{{ block.settings.richtext_description }}</p>
-        {% when 'button' %}
-          <div class="buttons">
-            {% if block.settings.richtext_button_label_1 != blank %}
-              <a href="{{ block.settings.richtext_button_url_1 }}" class="primary-button">
-                {{ block.settings.richtext_button_label_1 }}
-              </a>
-            {% endif %}
-            {% if block.settings.richtext_button_label_2 != blank %}
-              <a href="{{ block.settings.richtext_button_url_2 }}" class="secondary-button">
-                {{ block.settings.richtext_button_label_2 }}
-              </a>
-            {% endif %}
-          </div>
-      {% endcase %}
-    {% endfor %}
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'text' %}
+        <h1>{{ block.settings.richtext_heading }}</h1>
+      {% when 'richtext' %}
+        <p>{{ block.settings.richtext_description }}</p>
+      {% when 'button' %}
+        <div class="buttons{% if forloop.first or forloop.last %}{% else %} block-margin{% endif %}">
+          {% if block.settings.richtext_button_label_1 != blank %}
+            <a href="{{ block.settings.richtext_button_url_1 }}" class="primary-button">
+              {{ block.settings.richtext_button_label_1 }}
+            </a>
+          {% endif %}
+          {% if block.settings.richtext_button_label_2 != blank %}
+            <a href="{{ block.settings.richtext_button_url_2 }}" class="secondary-button">
+              {{ block.settings.richtext_button_label_2 }}
+            </a>
+          {% endif %}
+        </div>
+    {% endcase %}
+  {% endfor %}
 </div>
 
 <style>
-  .buttons {
-    {% comment %} make same height as child div {% endcomment %}
-    display: inline-flex;
+    .buttons {
+      {% comment %} make same height as child div {% endcomment %}
+      display: inline-flex;
+    }
+    .buttons a {
+      padding: 0.5rem 2.5rem;
+      border: none;
+      font-family: lora, serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 0.9rem;
+      color: #434342;
+      text-decoration: none;
+    }
+    .primary-button {
+      background-color: #e9c8a7;
+    }
+    .secondary-button {
+      background-color: #f6eddc;
+    }
+    .rich-text h1,
+    .rich-text p,
+    .rich-text .buttons {
+      margin: 0;
   }
-  .buttons a {
-    padding: 0.5rem 2.5rem;
-    border: none;
-    font-family: lora, serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 0.9rem;
-    color: #434342;
-    text-decoration: none;
+  .block-margin {
+    margin-top: 20px;
   }
-  .primary-button {
-    background-color: #e9c8a7;
-  }
-  .secondary-button {
-    background-color: #f6eddc;
-  }
-  .rich-text h1,
-  .rich-text p,
-  .rich-text .buttons {
-    margin: 0;
-}
 </style>
 
 {% schema %}
