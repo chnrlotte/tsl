@@ -33,10 +33,12 @@
         </div>
     {% endcase %}
 
+    {% comment %} add margin to middle dynamic block {% endcomment %}
     {% if forloop.index > 1 and forloop.index < section.blocks.size %}
       <style>
         .rich-text > *:not(:first-child):not(:last-child) {
-          margin: 20px 0;
+          margin-top: 3rem;
+          margin-bottom: 3rem;
         }
       </style>
     {% endif %}
