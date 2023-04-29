@@ -19,8 +19,12 @@
       <p>{{ block.settings.richtext_description }}</p>
     {% when 'button' %}
       <div class="buttons">
-        <button class="button primary-button">{{ block.settings.richtext_button_label_1 }}</button>
-        <button class="button secondary-button">{{ block.settings.richtext_button_label_2 }}</button>
+        {% if block.settings.richtext_button_label_1 != blank %}
+          <button class="button primary-button">{{ block.settings.richtext_button_label_1 }}</button>
+        {% endif %}
+        {% if block.settings.richtext_button_label_2 != blank %}
+          <button class="button secondary-button">{{ block.settings.richtext_button_label_2 }}</button>
+        {% endif %}
       </div>
   {% endcase %}
 {% endfor %}
