@@ -7,3 +7,10 @@ body {
   font-size: 0.938rem;
   color: #434342;
 }
+
+h1 {
+  font-size: 1.75rem;
+  font-family: lora, serif;
+  font-weight: 400;
+  font-style: normal;
+}
