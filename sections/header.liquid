@@ -28,6 +28,11 @@
     padding: 0 12.5%;
   }
 
+  {% comment %} target child divs except the last {% endcomment %}
+  .apple > div:not(:last-child) {
+    margin-right: 1rem;
+  }
+
   .header-logo {
     font-family: p22-typewriter, sans-serif;
     font-weight: 400;
