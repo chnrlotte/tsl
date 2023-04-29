@@ -9,5 +9,5 @@
       "settings": {}
     }
   },
-  "order": ["header", "announcement-bar"]
+  "order": ["announcement-bar", "header"]
 }
