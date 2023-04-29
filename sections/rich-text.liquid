@@ -19,7 +19,7 @@
       {% when 'richtext' %}
         <p>{{ block.settings.richtext_description }}</p>
       {% when 'button' %}
-        <div class="buttons{% if forloop.first or forloop.last %}{% else %} block-margin{% endif %}">
+        <div class="buttons">
           {% if block.settings.richtext_button_label_1 != blank %}
             <a href="{{ block.settings.richtext_button_url_1 }}" class="primary-button">
               {{ block.settings.richtext_button_label_1 }}
@@ -60,9 +60,6 @@
     .rich-text p,
     .rich-text .buttons {
       margin: 0;
-  }
-  .block-margin {
-    margin-top: 20px;
   }
 </style>
 
