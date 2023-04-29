@@ -32,6 +32,14 @@
           {% endif %}
         </div>
     {% endcase %}
+
+    {% if forloop.index > 1 and forloop.index < section.blocks.size %}
+      <style>
+        .rich-text > *:not(:first-child):not(:last-child) {
+          margin: 20px 0;
+        }
+      </style>
+    {% endif %}
   {% endfor %}
 </div>
 
