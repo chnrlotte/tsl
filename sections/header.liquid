@@ -19,8 +19,6 @@
 <style>
   .apple {
     display: flex;
-    {% comment %} set full width {% endcomment %}
-    {% comment %} width: 100vw; {% endcomment %}
     {% comment %} align child elements vertically {% endcomment %}
     align-items: center;
     {% comment %} spacing on left and right {% endcomment %}
@@ -36,6 +34,10 @@
     font-family: p22-typewriter, sans-serif;
     font-weight: 400;
     font-style: normal;
+  }
+
+  .header-nav {
+    flex: 1; 
   }
 
   .header-nav ul {
