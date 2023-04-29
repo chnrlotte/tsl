@@ -11,6 +11,13 @@
   </div>
 </div>
 
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when 'text' %}
+      <h1>{{ block.settings.richtext_heading }}</h1>
+  {% endcase %}
+{% endfor %}
+
 <style>
   button {
     padding: 0.5rem 2.5rem;
@@ -30,33 +37,32 @@
   "class": "rich-text",
   "blocks": [
     {
-        "type": "text",
-        "name": "Heading",
-        "settings": [
-            {
-                "type": "text",
-                "id": "richtext_heading",
-                "label": "Heading"
-            }
-        ]
+      "type": "text",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "richtext_heading",
+          "label": "Heading"
+        }
+      ]
     },
     {
-        "type": "richtext",
-        "name": "Description",
-        "settings": [
-            {
-                "type": "textarea",
-                "id": "richtext_description",
-                "label": "Description"
-            }
-        ]
+      "type": "richtext",
+      "name": "Description",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "richtext_description",
+          "label": "Description"
+        }
+      ]
     }
   ],
   "presets": [
     {
-        "name": "Rich text"
+      "name": "Rich text"
     }
   ]
 }
 {% endschema %}
-
