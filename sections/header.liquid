@@ -38,15 +38,20 @@
     font-style: normal;
   }
 
-  ul {
+  .header-nav ul {
     {% comment %} remove bullet points {% endcomment %}
     list-style: none;
     padding: 0;
   }
 
-  li {
+  .header-nav li {
     {% comment %} make list horizontal {% endcomment %}
     display: inline-block;
+  }
+
+  {% comment %} target li except the last {% endcomment %}
+  .header-nav li:not(:last-child){
+    margin-right: 3.3333%;
   }
 
   .header-icons {
