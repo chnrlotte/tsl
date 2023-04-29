@@ -1,0 +1,15 @@
+<div class="apple">
+  <div class="header-logo">the sunday loft</div>
+  <div class="header-nav">
+    <ul>
+      {% for link in linklists['main-menu'].links %}
+        <li>
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="header-icons"></div>
+</div>
+
+<style></style>
