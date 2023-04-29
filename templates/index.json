@@ -7,7 +7,11 @@
     "header": {
       "type": "header",
       "settings": {}
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "settings": {}
     }
   },
-  "order": ["announcement-bar", "header"]
+  "order": ["announcement-bar", "header", "rich-text"]
 }
