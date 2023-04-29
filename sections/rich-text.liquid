@@ -22,3 +22,25 @@
     color: #434342;
   }
 </style>
+
+{% schema %}
+{
+  "name": "Rich text",
+  "tag": "section",
+  "class": "rich-text",
+  "settings": [
+    {
+        "type": "blocks",
+        "name": "Rich text content",
+        "blocks": [
+            {
+                "type": "text",
+                "id": "richtext_heading",
+                "label": "Heading"
+            }
+        ]
+    }
+  ]
+}
+{% endschema %}
+
