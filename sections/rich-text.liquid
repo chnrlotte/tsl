@@ -20,12 +20,12 @@
     {% when 'button' %}
       <div class="buttons">
         {% if block.settings.richtext_button_label_1 != blank %}
-          <a href="" class="button primary-button">
+          <a href="" class="primary-button">
             {{ block.settings.richtext_button_label_1 }}
           </a>
         {% endif %}
         {% if block.settings.richtext_button_label_2 != blank %}
-          <a href="" class="button secondary-button">
+          <a href="" class="secondary-button">
             {{ block.settings.richtext_button_label_2 }}
           </a>
         {% endif %}
@@ -34,7 +34,7 @@
 {% endfor %}
 
 <style>
-  .button {
+  a {
     padding: 0.5rem 2.5rem;
     border: none;
     font-family: lora, serif;
