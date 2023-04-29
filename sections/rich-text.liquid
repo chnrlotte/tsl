@@ -20,12 +20,12 @@
     {% when 'button' %}
       <div class="buttons">
         {% if block.settings.richtext_button_label_1 != blank %}
-          <a href="" class="primary-button">
+          <a href="{{ block.settings.richtext_button_url_1 }}" class="primary-button">
             {{ block.settings.richtext_button_label_1 }}
           </a>
         {% endif %}
         {% if block.settings.richtext_button_label_2 != blank %}
-          <a href="" class="secondary-button">
+          <a href="{{ block.settings.richtext_button_url_2 }}" class="secondary-button">
             {{ block.settings.richtext_button_label_2 }}
           </a>
         {% endif %}
@@ -34,7 +34,7 @@
 {% endfor %}
 
 <style>
-  .buttons a {
+  a {
     padding: 0.5rem 2.5rem;
     border: none;
     font-family: lora, serif;
@@ -42,7 +42,6 @@
     font-style: normal;
     font-size: 0.9rem;
     color: #434342;
-    background-color: blue;
   }
 </style>
 
