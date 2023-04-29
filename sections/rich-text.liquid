@@ -33,15 +33,6 @@
         </div>
     {% endcase %}
 
-    {% comment %} add margin to middle dynamic block {% endcomment %}
-    {% if forloop.index > 1 and forloop.index < section.blocks.size %}
-      <style>
-        .rich-text > *:not(:first-child):not(:last-child) {
-          margin-top: 3rem;
-          margin-bottom: 3rem;
-        }
-      </style>
-    {% endif %}
   {% endfor %}
 </div>
 
@@ -71,6 +62,12 @@
     .rich-text .buttons {
       margin: 0;
   }
+
+  .rich-text {
+    display: grid;
+    grid-row-gap: 3rem;
+    row-gap: 3rem;
+}
 </style>
 
 {% schema %}
