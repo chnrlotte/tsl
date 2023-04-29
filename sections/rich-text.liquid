@@ -17,11 +17,16 @@
       <h1>{{ block.settings.richtext_heading }}</h1>
     {% when 'richtext' %}
       <p>{{ block.settings.richtext_description }}</p>
+    {% when 'button' %}
+        <div class="buttons">
+            <a class="primary-button">{{ block.settings.richtext_button_label }}</a>
+            <a class="secondary-button">{{ block.settings.richtext_button_label }}</a>
+          </div>
   {% endcase %}
 {% endfor %}
 
 <style>
-  button {
+  .buttons a {
     padding: 0.5rem 2.5rem;
     border: none;
     font-family: lora, serif;
