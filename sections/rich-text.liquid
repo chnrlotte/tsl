@@ -34,9 +34,10 @@
 {% endfor %}
 
 <style>
-    .buttons {
-        display: inline-flex;
-    }
+  .buttons {
+    {% comment %} make same height as child div {% endcomment %}
+    display: inline-flex;
+  }
   .buttons a {
     padding: 0.5rem 2.5rem;
     border: none;
