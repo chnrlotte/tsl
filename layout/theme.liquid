@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
+    {% comment %} adobe fonts {% endcomment %}
     <link rel="stylesheet" href="https://use.typekit.net/vmg7nvr.css">
     {{ content_for_header }}
-
+    {% comment %} stylesheets {% endcomment %}
+    {{ 'base.css' | asset_url | stylesheet_tag }}
   </head>
 
   <body>
 
     {{ content_for_layout }}
-
+    
   </body>
  </html>
