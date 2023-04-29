@@ -81,6 +81,12 @@
       max-width: 1.3rem;
     }
 
+    {% comment %} target icons except first and last {% endcomment %}
+    .header-icons img:not(:first-child):not(:last-child) {
+      margin left: 5%;
+      margin-right: 5%;
+    }
+
     {% comment %} working guides | delete later {% endcomment %}
     .apple,
     .header-logo,
