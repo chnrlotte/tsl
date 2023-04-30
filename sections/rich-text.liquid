@@ -1,5 +1,5 @@
-<div class="rich-text_parent {% if section.settings.richtext_align == 'center' %}rich-text_parent--center{% elsif section.settings.richtext_align == 'right' %}rich-text_parent--right{% endif %}">
-  <div class="rich-text">
+<div class="rich-text_parent{% if section.settings.richtext_align == 'center' %} rich-text_parent--center{% elsif section.settings.richtext_align == 'right' %} rich-text_parent--right{% endif %}">
+  <div class="rich-text{% if section.settings.richtext_align == 'center' %} rich-text--center{% elsif section.settings.richtext_align == 'right' %} rich-text--right{% endif %}">
     <h1>this is an example heading</h1>
     <p>
       We love helping you save, and we hope these options make it easier for you to shop with us. We’re always looking
@@ -75,6 +75,10 @@
     grid-row-gap: 3rem;
     row-gap: 3rem;
     width: {{ section.settings.richtext_width }};
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .rich-text .rich-text-schema {
@@ -84,6 +88,27 @@
 
   .rich-text_parent {
     width: {{ section.settings.richtext-parent_width }};
+    position: relative;
+  }
+
+  .rich-text_parent--center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .rich-text_parent--right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .rich-text--center {
+    transform: translateX(-50%);
+  }
+  
+  .rich-text--right {
+    transform: translateX(-100%);
   }
 
   {% comment %} working guides, delete later {% endcomment %}
