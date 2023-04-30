@@ -63,6 +63,11 @@
       margin: 0;
   }
 
+  .richtext_description_class {
+    {% comment %} let users create new paragaph by hitting "enter" {% endcomment %}
+    white-space: pre-wrap;
+}
+
   {% comment %} spacing between child divs {% endcomment %}
   .rich-text {
     display: grid;
@@ -97,6 +102,7 @@
           "type": "textarea",
           "id": "richtext_description",
           "label": "Description",
+          "class": "richtext_description_class"
           "default": "We love helping you save, and we hope these options make it easier for you to shop with us. We’re always looking for ways to make your experience better, so feel free to reach out to us with any suggestions or feedback you may have. Thank you for being a part of our community!"
         }
       ]
