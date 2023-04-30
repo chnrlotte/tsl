@@ -1,4 +1,4 @@
-<div class="rich-text_parent">
+<div class="rich-text_parent {% if section.settings.richtext_align == 'center' %}rich-text_parent--center{% elsif section.settings.richtext_align == 'right' %}rich-text_parent--right{% endif %}">
   <div class="rich-text">
     <h1>this is an example heading</h1>
     <p>
@@ -133,6 +133,26 @@
         }
       ],
       "default": "40vw"
+    },
+    {
+      "type": "select",
+      "id": "richtext_align",
+      "label": "Position content",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
     }
   ],
   "blocks": [
