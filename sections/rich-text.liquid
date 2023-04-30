@@ -75,6 +75,8 @@
       grid-row-gap: 3rem;
       row-gap: 3rem;
       width: {{ section.settings.richtext_width }};
+      text-align: {{ section.settings.richtext_aligntext }};
+
     }
   
     .rich-text .rich-text-schema {
@@ -175,6 +177,26 @@
           }
         ],
         "default": "flex-start"
+      },
+      {
+        "type": "select",
+        "id": "richtext_aligntext",
+        "label": "Align text",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left"
       }
     ],
     "blocks": [
