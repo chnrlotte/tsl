@@ -1,42 +1,42 @@
 <div class="rich-text_parent">
-    <div class="rich-text">
-      <h1>this is an example heading</h1>
-      <p>
-        We love helping you save, and we hope these options make it easier for you to shop with us. We’re always looking for
-        ways to make your experience better, so feel free to reach out to us with any suggestions or feedback you may have.
-        Thank you for being a part of our community!
-      </p>
-      <div class="buttons">
-        <a href="" class="primary-button">example</a>
-        <a href="" class="secondary-button">example</a>
-      </div>
+  <div class="rich-text">
+    <h1>this is an example heading</h1>
+    <p>
+      We love helping you save, and we hope these options make it easier for you to shop with us. We’re always looking
+      for ways to make your experience better, so feel free to reach out to us with any suggestions or feedback you may
+      have. Thank you for being a part of our community!
+    </p>
+    <div class="buttons">
+      <a href="" class="primary-button">example</a>
+      <a href="" class="secondary-button">example</a>
     </div>
+  </div>
 </div>
 
 <div class="rich-text_parent">
-    <div class="rich-text">
-      {% for block in section.blocks %}
-        {% case block.type %}
-          {% when 'text' %}
-            <h1>{{ block.settings.richtext_heading }}</h1>
-          {% when 'richtext' %}
-            <p>{{ block.settings.richtext_description }}</p>
-          {% when 'button' %}
-            <div class="buttons">
-              {% if block.settings.richtext_button_label_1 != blank %}
-                <a href="{{ block.settings.richtext_button_url_1 }}" class="primary-button">
-                  {{ block.settings.richtext_button_label_1 }}
-                </a>
-              {% endif %}
-              {% if block.settings.richtext_button_label_2 != blank %}
-                <a href="{{ block.settings.richtext_button_url_2 }}" class="secondary-button">
-                  {{ block.settings.richtext_button_label_2 }}
-                </a>
-              {% endif %}
-            </div>
-        {% endcase %}
-      {% endfor %}
-    </div>
+  <div class="rich-text">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'text' %}
+          <h1>{{ block.settings.richtext_heading }}</h1>
+        {% when 'richtext' %}
+          <p>{{ block.settings.richtext_description }}</p>
+        {% when 'button' %}
+          <div class="buttons">
+            {% if block.settings.richtext_button_label_1 != blank %}
+              <a href="{{ block.settings.richtext_button_url_1 }}" class="primary-button">
+                {{ block.settings.richtext_button_label_1 }}
+              </a>
+            {% endif %}
+            {% if block.settings.richtext_button_label_2 != blank %}
+              <a href="{{ block.settings.richtext_button_url_2 }}" class="secondary-button">
+                {{ block.settings.richtext_button_label_2 }}
+              </a>
+            {% endif %}
+          </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
 </div>
 
 <style>
@@ -82,6 +82,10 @@
     white-space: pre-wrap;
   }
 
+  .rich-text_parent {
+    width: {{ section.settings.richtext-parent_width }}
+  }
+
   {% comment %} working guides, delete later {% endcomment %}
   .rich-text_parent,
   .rich-text,
@@ -100,8 +104,23 @@
   "settings": [
     {
       "type": "select",
+      "id": "richtext-parent_width",
+      "label": "Section width",
+      "options": [
+        {
+          "value": "45vw;",
+          "label": "Wide"
+        },
+        {
+          "value": "100vw;",
+          "label": "Full width"
+        }
+      ]
+    },
+    {
+      "type": "select",
       "id": "richtext_width",
-      "label": "Width",
+      "label": "Content width",
       "options": [
         {
           "value": "40vw",
