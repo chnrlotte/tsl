@@ -28,6 +28,7 @@ h1 {
 
 .buttons {
   gap: 1rem;
+  display: inline-flex;
 }
 
 .primary-button {
