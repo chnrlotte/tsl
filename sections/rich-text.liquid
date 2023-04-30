@@ -68,7 +68,7 @@
     display: grid;
     grid-row-gap: 3rem;
     row-gap: 3rem;
-    width: 45vw;
+    width: {{ block.settings.richtext_description_width }};
   }
 
   .rich-text .rich-text-schema {
@@ -118,9 +118,16 @@
           "id": "richtext_description_width",
           "label": "Width",
           "options": [
-            "value": "45vw",
-            "label": "Wide",
-          ]
+            {
+                "value": "40vw",
+                "label": "Less Wide"
+            },
+            {
+                "value": "45vw",
+                "label": "Wide"
+            }
+          ],
+          "default": "45vw";
         }
       ]
     },
