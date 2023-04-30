@@ -75,9 +75,6 @@
     grid-row-gap: 3rem;
     row-gap: 3rem;
     width: {{ section.settings.richtext_width }};
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
   }
 
   .rich-text .rich-text-schema {
@@ -87,20 +84,6 @@
 
   .rich-text_parent {
     width: {{ section.settings.richtext-parent_width }};
-    position: relative;
-  }
-
-  .rich-text--left {
-    left: 0;
-    transform: none;
-  }
-  
-  .rich-text--center {
-    left: 50%;
-  }
-  
-  .rich-text--right {
-    right: 0;
   }
 
   {% comment %} working guides, delete later {% endcomment %}
@@ -150,26 +133,6 @@
         }
       ],
       "default": "40vw"
-    },
-    {
-        "type": "select",
-        "id": "richtext_align",
-        "label": "Position content",
-        "options": [
-            {
-                "value": "left",
-                "label": "Left"
-            },
-            {
-                "value": "center",
-                "label": "Center"
-            },
-            {
-                "value": "right",
-                "label": "Right"
-            }
-        ],
-        "default": "left"
     }
   ],
   "blocks": [
