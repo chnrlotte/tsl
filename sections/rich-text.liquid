@@ -32,49 +32,48 @@
           {% endif %}
         </div>
     {% endcase %}
-
   {% endfor %}
 </div>
 
 <style>
-    .buttons {
-      {% comment %} make same height as child div {% endcomment %}
-      display: inline-flex;
-      white-space: normal;
-    }
-    .buttons a {
-      padding: 0.5rem 2.5rem;
-      border: none;
-      font-family: lora, serif;
-      font-weight: 400;
-      font-style: normal;
-      font-size: 0.9rem;
-      color: #434342;
-      text-decoration: none;
-    }
-    .primary-button {
-      background-color: #e9c8a7;
-    }
-    .secondary-button {
-      background-color: #f6eddc;
-    }
-    .rich-text h1,
-    .rich-text p,
-    .rich-text .buttons {
-      margin: 0;
+  .buttons {
+    {% comment %} make same height as child div {% endcomment %}
+    display: inline-flex;
+    white-space: normal;
   }
-
-  .rich-text-schema {
-    {% comment %} let users create new paragaph by hitting "enter" {% endcomment %}
-    white-space: pre-wrap;
-}
+  .buttons a {
+    padding: 0.5rem 2.5rem;
+    border: none;
+    font-family: lora, serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.9rem;
+    color: #434342;
+    text-decoration: none;
+  }
+  .primary-button {
+    background-color: #e9c8a7;
+  }
+  .secondary-button {
+    background-color: #f6eddc;
+  }
+  .rich-text h1,
+  .rich-text p,
+  .rich-text .buttons {
+    margin: 0;
+  }
 
   {% comment %} spacing between child divs {% endcomment %}
   .rich-text {
     display: grid;
     grid-row-gap: 3rem;
     row-gap: 3rem;
-}
+  }
+
+  .rich-text-schema {
+    {% comment %} let users create new paragaph by hitting "enter" {% endcomment %}
+    white-space: pre-wrap;
+  }
 </style>
 
 {% schema %}
