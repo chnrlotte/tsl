@@ -68,7 +68,7 @@
     display: grid;
     grid-row-gap: 3rem;
     row-gap: 3rem;
-    width: {{ block.settings.richtext_description_width }};
+    width: {{ block.settings.richtext_width }};
   }
 
   .rich-text .rich-text-schema {
@@ -90,6 +90,24 @@
   "name": "Rich text",
   "tag": "section",
   "class": "rich-text-schema",
+  "settings": [
+    {
+        "type": "select",
+        "id": "richtext_width",
+        "label": "Width",
+        "options": [
+            {
+                "value": "40vw",
+                "label": "Less wide"
+            },
+            {
+                "value": "45vw",
+                "label": "Wide"
+            }
+        ],
+        "default": "40vw"
+    }
+  ],
   "blocks": [
     {
       "type": "text",
@@ -112,22 +130,6 @@
           "id": "richtext_description",
           "label": "Description",
           "default": "We love helping you save, and we hope these options make it easier for you to shop with us. We’re always looking for ways to make your experience better, so feel free to reach out to us with any suggestions or feedback you may have. Thank you for being a part of our community!"
-        },
-        {
-          "type": "select",
-          "id": "richtext_description_width",
-          "label": "Width",
-          "options": [
-            {
-                "value": "40vw",
-                "label": "Less Wide"
-            },
-            {
-                "value": "45vw",
-                "label": "Wide"
-            }
-          ],
-          "default": "40vw"
         }
       ]
     },
