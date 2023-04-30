@@ -1,243 +1,198 @@
-<div class="rich-text_parent{% if section.settings.richtext_align == 'center' %} rich-text_parent--center{% elsif section.settings.richtext_align == 'right' %} rich-text_parent--right{% endif %}">
-  <div class="rich-text{% if section.settings.richtext_align == 'center' %} rich-text--center{% elsif section.settings.richtext_align == 'right' %} rich-text--right{% endif %}">
-    <h1>this is an example heading</h1>
-    <p>
-      We love helping you save, and we hope these options make it easier for you to shop with us. We’re always looking
-      for ways to make your experience better, so feel free to reach out to us with any suggestions or feedback you may
-      have. Thank you for being a part of our community!
-    </p>
-    <div class="buttons">
-      <a href="" class="primary-button">example</a>
-      <a href="" class="secondary-button">example</a>
+<div class="rich-text_parent">
+    <div class="rich-text">
+      <h1>this is an example heading</h1>
+      <p>
+        We love helping you save, and we hope these options make it easier for you to shop with us. We’re always looking
+        for ways to make your experience better, so feel free to reach out to us with any suggestions or feedback you may
+        have. Thank you for being a part of our community!
+      </p>
+      <div class="buttons">
+        <a href="" class="primary-button">example</a>
+        <a href="" class="secondary-button">example</a>
+      </div>
     </div>
   </div>
-</div>
-
-<div class="rich-text_parent">
-  <div class="rich-text">
-    {% for block in section.blocks %}
-      {% case block.type %}
-        {% when 'text' %}
-          <h1>{{ block.settings.richtext_heading }}</h1>
-        {% when 'richtext' %}
-          <p>{{ block.settings.richtext_description }}</p>
-        {% when 'button' %}
-          <div class="buttons">
-            {% if block.settings.richtext_button_label_1 != blank %}
-              <a href="{{ block.settings.richtext_button_url_1 }}" class="primary-button">
-                {{ block.settings.richtext_button_label_1 }}
-              </a>
-            {% endif %}
-            {% if block.settings.richtext_button_label_2 != blank %}
-              <a href="{{ block.settings.richtext_button_url_2 }}" class="secondary-button">
-                {{ block.settings.richtext_button_label_2 }}
-              </a>
-            {% endif %}
-          </div>
-      {% endcase %}
-    {% endfor %}
+  
+  <div class="rich-text_parent">
+    <div class="rich-text">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'text' %}
+            <h1>{{ block.settings.richtext_heading }}</h1>
+          {% when 'richtext' %}
+            <p>{{ block.settings.richtext_description }}</p>
+          {% when 'button' %}
+            <div class="buttons">
+              {% if block.settings.richtext_button_label_1 != blank %}
+                <a href="{{ block.settings.richtext_button_url_1 }}" class="primary-button">
+                  {{ block.settings.richtext_button_label_1 }}
+                </a>
+              {% endif %}
+              {% if block.settings.richtext_button_label_2 != blank %}
+                <a href="{{ block.settings.richtext_button_url_2 }}" class="secondary-button">
+                  {{ block.settings.richtext_button_label_2 }}
+                </a>
+              {% endif %}
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
   </div>
-</div>
-
-<style>
-  .buttons {
-    {% comment %} make same height as child div {% endcomment %}
-    display: inline-flex;
-    white-space: normal;
-    width: max-content;
-    gap: 1rem;
-  }
-  .buttons a {
-    padding: 0.5rem 2.5rem;
-    border: none;
-    font-family: lora, serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 0.9rem;
-    color: #434342;
-    text-decoration: none;
-  }
-  .primary-button {
-    background-color: #e9c8a7;
-  }
-  .secondary-button {
-    background-color: #f6eddc;
-  }
-  .rich-text h1,
-  .rich-text p,
-  .rich-text .buttons {
-    margin: 0;
-  }
-
-  {% comment %} spacing between child divs {% endcomment %}
-  .rich-text {
-    display: grid;
-    grid-row-gap: 3rem;
-    row-gap: 3rem;
-    width: {{ section.settings.richtext_width }};
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .rich-text .rich-text-schema {
-    {% comment %} let users create new paragaph by hitting "enter" {% endcomment %}
-    white-space: pre-wrap;
-  }
-
-  .rich-text_parent {
-    width: {{ section.settings.richtext-parent_width }};
-    position: relative;
-  }
-
-  .rich-text_parent--center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
   
-  .rich-text_parent--right {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-
-  .rich-text--center {
-    transform: translateX(-50%);
-  }
+  <style>
+    .buttons {
+      {% comment %} make same height as child div {% endcomment %}
+      display: inline-flex;
+      white-space: normal;
+      width: max-content;
+      gap: 1rem;
+    }
+    .buttons a {
+      padding: 0.5rem 2.5rem;
+      border: none;
+      font-family: lora, serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 0.9rem;
+      color: #434342;
+      text-decoration: none;
+    }
+    .primary-button {
+      background-color: #e9c8a7;
+    }
+    .secondary-button {
+      background-color: #f6eddc;
+    }
+    .rich-text h1,
+    .rich-text p,
+    .rich-text .buttons {
+      margin: 0;
+    }
   
-  .rich-text--right {
-    transform: translateX(-100%);
+    {% comment %} spacing between child divs {% endcomment %}
+    .rich-text {
+      display: grid;
+      grid-row-gap: 3rem;
+      row-gap: 3rem;
+      width: {{ section.settings.richtext_width }};
+    }
+  
+    .rich-text .rich-text-schema {
+      {% comment %} let users create new paragaph by hitting "enter" {% endcomment %}
+      white-space: pre-wrap;
+    }
+  
+    .rich-text_parent {
+      width: {{ section.settings.richtext-parent_width }};
+    }
+  
+    {% comment %} working guides, delete later {% endcomment %}
+    .rich-text_parent,
+    .rich-text,
+    .rich-text h1,
+    .rich-text p,
+    .rich-text .buttons {
+      border: 1px solid black;
+    }
+  </style>
+  
+  {% schema %}
+  {
+    "name": "Rich text",
+    "tag": "section",
+    "class": "rich-text-schema",
+    "settings": [
+      {
+        "type": "select",
+        "id": "richtext-parent_width",
+        "label": "Section width",
+        "options": [
+          {
+            "value": "45vw",
+            "label": "Wide"
+          },
+          {
+            "value": "100vw",
+            "label": "Full width"
+          }
+        ],
+        "default": "100vw"
+      },
+      {
+        "type": "select",
+        "id": "richtext_width",
+        "label": "Content width",
+        "options": [
+          {
+            "value": "40vw",
+            "label": "Less wide"
+          },
+          {
+            "value": "45vw",
+            "label": "Wide"
+          }
+        ],
+        "default": "40vw"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Heading",
+        "settings": [
+          {
+            "type": "text",
+            "id": "richtext_heading",
+            "label": "Heading",
+            "default": "welcome to the loftie membership"
+          }
+        ]
+      },
+      {
+        "type": "richtext",
+        "name": "Description",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "richtext_description",
+            "label": "Description",
+            "default": "We love helping you save, and we hope these options make it easier for you to shop with us. We’re always looking for ways to make your experience better, so feel free to reach out to us with any suggestions or feedback you may have. Thank you for being a part of our community!"
+          }
+        ]
+      },
+      {
+        "type": "button",
+        "name": "Button",
+        "settings": [
+          {
+            "type": "text",
+            "id": "richtext_button_label_1",
+            "label": "Button Label (1)",
+            "default": "sign up"
+          },
+          {
+            "type": "url",
+            "id": "richtext_button_url_1",
+            "label": "Button URL (1)"
+          },
+          {
+            "type": "text",
+            "id": "richtext_button_label_2",
+            "label": "Button Label (2)",
+            "default": "log in"
+          },
+          {
+            "type": "url",
+            "id": "richtext_button_url_2",
+            "label": "Button URL (2)"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Rich text"
+      }
+    ]
   }
-
-  {% comment %} working guides, delete later {% endcomment %}
-  .rich-text_parent,
-  .rich-text,
-  .rich-text h1,
-  .rich-text p,
-  .rich-text .buttons {
-    border: 1px solid black;
-  }
-</style>
-
-{% schema %}
-{
-  "name": "Rich text",
-  "tag": "section",
-  "class": "rich-text-schema",
-  "settings": [
-    {
-      "type": "select",
-      "id": "richtext-parent_width",
-      "label": "Section width",
-      "options": [
-        {
-          "value": "45vw",
-          "label": "Wide"
-        },
-        {
-          "value": "100vw",
-          "label": "Full width"
-        }
-      ],
-      "default": "100vw"
-    },
-    {
-      "type": "select",
-      "id": "richtext_width",
-      "label": "Content width",
-      "options": [
-        {
-          "value": "40vw",
-          "label": "Less wide"
-        },
-        {
-          "value": "45vw",
-          "label": "Wide"
-        }
-      ],
-      "default": "40vw"
-    },
-    {
-      "type": "select",
-      "id": "richtext_align",
-      "label": "Position content",
-      "options": [
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        },
-        {
-          "value": "right",
-          "label": "Right"
-        }
-      ],
-      "default": "left"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "text",
-      "name": "Heading",
-      "settings": [
-        {
-          "type": "text",
-          "id": "richtext_heading",
-          "label": "Heading",
-          "default": "welcome to the loftie membership"
-        }
-      ]
-    },
-    {
-      "type": "richtext",
-      "name": "Description",
-      "settings": [
-        {
-          "type": "textarea",
-          "id": "richtext_description",
-          "label": "Description",
-          "default": "We love helping you save, and we hope these options make it easier for you to shop with us. We’re always looking for ways to make your experience better, so feel free to reach out to us with any suggestions or feedback you may have. Thank you for being a part of our community!"
-        }
-      ]
-    },
-    {
-      "type": "button",
-      "name": "Button",
-      "settings": [
-        {
-          "type": "text",
-          "id": "richtext_button_label_1",
-          "label": "Button Label (1)",
-          "default": "sign up"
-        },
-        {
-          "type": "url",
-          "id": "richtext_button_url_1",
-          "label": "Button URL (1)"
-        },
-        {
-          "type": "text",
-          "id": "richtext_button_label_2",
-          "label": "Button Label (2)",
-          "default": "log in"
-        },
-        {
-          "type": "url",
-          "id": "richtext_button_url_2",
-          "label": "Button URL (2)"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Rich text"
-    }
-  ]
-}
-{% endschema %}
+  {% endschema %}
