@@ -44,8 +44,8 @@
       {% comment %} make same height as child div {% endcomment %}
       display: inline-flex;
       white-space: normal;
-      width: max-content;
       gap: 1rem;
+      justify-content: {{ section.settings.richtext_button_position }};
     }
     .buttons a {
       padding: 0.5rem 2.5rem;
@@ -140,6 +140,26 @@
         "type": "select",
         "id": "richtext_content_position",
         "label": "Position content",
+        "options": [
+          {
+            "value": "flex-start",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Middle"
+          },
+          {
+            "value": "flex-end",
+            "label": "Right"
+          }
+        ],
+        "default": "flex-start"
+      },
+      {
+        "type": "select",
+        "id": "richtext_button_position",
+        "label": "Position buttons",
         "options": [
           {
             "value": "flex-start",
