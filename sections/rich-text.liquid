@@ -84,6 +84,8 @@
   
     .rich-text_parent {
       width: {{ section.settings.richtext-parent_width }};
+      display: flex;
+      justify-content: {{ section.settings.richtext_content_position }};
     }
   
     {% comment %} working guides, delete later {% endcomment %}
@@ -130,6 +132,26 @@
           {
             "value": "45vw",
             "label": "Wide"
+          }
+        ],
+        "default": "40vw"
+      },
+      {
+        "type": "select",
+        "id": "richtext_content_position",
+        "label": "Position content",
+        "options": [
+          {
+            "value": "flex-start",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Middle"
+          },
+          {
+            "value": "flex-end",
+            "label": "Right"
           }
         ],
         "default": "40vw"
