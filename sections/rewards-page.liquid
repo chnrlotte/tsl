@@ -26,35 +26,37 @@
     <div class="rewards-redeem_content">
         <h1>redeem vouchers</h1>
         <p>Start earning points for every dollar you spend. For every SGD $1 you spend, you earn 5 points. These points can be redeemed for discounts on future purchases.</p>
-        <div class="infographic-item">
-            <img src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/5.png?v=1681490477" alt="Voucher Icon"/>
-            <p class="infographic-title">$5 Voucher</p>
-            <p class="infographic-description">500 Points</p>
-        </div>
-        <div class="infographic-item">
-            <img src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/10.png?v=1681490593" alt="Voucher Icon"/>
-            <p class="infographic-title">$10 Voucher</p>
-            <p class="infographic-description">1,000 Points</p>
-        </div>
-        <div class="infographic-item">
-            <img src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/15.png?v=1681490637" alt="Voucher Icon"/>
-            <p class="infographic-title">$15 Voucher</p>
-            <p class="infographic-description">1,500 Points</p>
-        </div>
-        <div class="infographic-item">
-            <img src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/20.png?v=1681490679" alt="Voucher Icon"/>
-            <p class="infographic-title">$20 Voucher</p>
-            <p class="infographic-description">2,000 Points</p>
-        </div>
-        <div class="infographic-item">
-            <img src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/25.png?v=1681490711" alt="Voucher Icon"/>
-            <p class="infographic-title">$25 Voucher</p>
-            <p class="infographic-description">2,500 Points</p>
-        </div>
-        <div class="infographic-item">
-            <img src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/30.png?v=1681490746" alt="Voucher Icon"/>
-            <p class="infographic-title">$30 Voucher</p>
-            <p class="infographic-description">3,000 Points</p>
+        <div class="infographic-group">
+            <div class="infographic-item">
+                <img src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/5.png?v=1681490477" alt="Voucher Icon"/>
+                <p class="infographic-title">$5 Voucher</p>
+                <p class="infographic-description">500 Points</p>
+            </div>
+            <div class="infographic-item">
+                <img src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/10.png?v=1681490593" alt="Voucher Icon"/>
+                <p class="infographic-title">$10 Voucher</p>
+                <p class="infographic-description">1,000 Points</p>
+            </div>
+            <div class="infographic-item">
+                <img src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/15.png?v=1681490637" alt="Voucher Icon"/>
+                <p class="infographic-title">$15 Voucher</p>
+                <p class="infographic-description">1,500 Points</p>
+            </div>
+            <div class="infographic-item">
+                <img src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/20.png?v=1681490679" alt="Voucher Icon"/>
+                <p class="infographic-title">$20 Voucher</p>
+                <p class="infographic-description">2,000 Points</p>
+            </div>
+            <div class="infographic-item">
+                <img src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/25.png?v=1681490711" alt="Voucher Icon"/>
+                <p class="infographic-title">$25 Voucher</p>
+                <p class="infographic-description">2,500 Points</p>
+            </div>
+            <div class="infographic-item">
+                <img src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/30.png?v=1681490746" alt="Voucher Icon"/>
+                <p class="infographic-title">$30 Voucher</p>
+                <p class="infographic-description">3,000 Points</p>
+            </div>
         </div>
     </div>
 </div>
@@ -105,6 +107,12 @@
 
   .infographic-description {
     margin: 0;
+  }
+
+  .infographic-group {
+    display: grid;
+    grid-template:columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
   }
 
   {% comment %} working guides, delete later {% endcomment %}
