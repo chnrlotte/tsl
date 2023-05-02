@@ -1,53 +1,72 @@
-<div class="first-column">
-    <img class="footer-logo" src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/logo-icon.png?v=1683005210" alt="Logo">
-    <p>We’re here to help you create a space that’s both beautiful and comforting, where you can unwind and recharge after a long day. It’s our mission to curate a collection of beautiful and timeless home decor and furnishings, carefully selected to help you create a space you’ll love to be in.</p>
-    <div class="contact-icons">
-        <img src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/instagram-solid-icon.png?v=1683005211" alt="Instagram Icon">
-        <img src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/whatsapp-solid-icon.png?v=1683005211" alt="WhatsApp Icon">
-        <img src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/email-solid-icon.png?v=1683005211" alt="Email Icon">
-    </div>
-</div>
 <div class="footer">
-    <div class="roboto-bold footer-menu_title">About Us</div>
-    <ul>
-        {% for link in linklists.about-us-menu.links %}
-          <li>
-            <a href="{{ link.url }}">{{ link.title }}</a>
-          </li>
-        {% endfor %}
-    </ul>
+    <div class="first-column">
+      <img
+        class="footer-logo"
+        src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/logo-icon.png?v=1683005210"
+        alt="Logo"
+      >
+      <p>
+        We’re here to help you create a space that’s both beautiful and comforting, where you can unwind and recharge after
+        a long day. It’s our mission to curate a collection of beautiful and timeless home decor and furnishings, carefully
+        selected to help you create a space you’ll love to be in.
+      </p>
+      <div class="contact-icons">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/instagram-solid-icon.png?v=1683005211"
+          alt="Instagram Icon"
+        >
+        <img
+          src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/whatsapp-solid-icon.png?v=1683005211"
+          alt="WhatsApp Icon"
+        >
+        <img
+          src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/email-solid-icon.png?v=1683005211"
+          alt="Email Icon"
+        >
+      </div>
+    </div>
+    <div class="second-column">
+        <div class="roboto-bold footer-menu_title">About Us</div>
+        <ul>
+          {% for link in linklists['about-us-menu'].links %}
+            <li>
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+    </div>
 </div>
 
 <style>
-    .first-column .footer-logo {
-        width: 15vh;
-    }
-    
-    .first-column p {
-        width: 28vw;
-    }
+  .first-column .footer-logo {
+    width: 15vh;
+  }
 
-    .contact-icons img {
-        width: 1.65vw;
-    }
+  .first-column p {
+    width: 28vw;
+  }
 
-    .footer-menu_title {
-        text-transform: uppercase;
-        margin-bottom: 1rem;
-    }
+  .contact-icons img {
+    width: 1.65vw;
+  }
 
-    .footer ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
+  .footer-menu_title {
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
 
-    .footer li:not(:last-child) {
-        margin-bottom: 0.6rem;
-    }
+  .footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-    .footer a {
-        text-decoration: none;
-        color: #434342;
-    }
+  .footer li:not(:last-child) {
+    margin-bottom: 0.6rem;
+  }
+
+  .footer a {
+    text-decoration: none;
+    color: #434342;
+  }
 </style>
