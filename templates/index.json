@@ -11,7 +11,11 @@
     "rewards-page": {
       "type": "rewards-page",
       "settings": {}
+    },
+    "footer": {
+      "type": "footer",
+      "settings": {}
     }
   },
-  "order": ["announcement-bar", "header", "rewards-page"]
+  "order": ["announcement-bar", "header", "rewards-page", "footer"]
 }
