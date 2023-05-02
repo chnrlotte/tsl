@@ -45,6 +45,16 @@
           {% endfor %}
         </ul>
     </div>
+    <div class="fourth-column">
+        <div class="roboto-bold footer-menu_title">Contact Us</div>
+        <ul>
+          {% for link in linklists['footer-contact-us-menu'].links %}
+            <li>
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+    </div>
 </div>
 
 <style>
