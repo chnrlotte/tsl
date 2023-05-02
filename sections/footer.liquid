@@ -1,59 +1,61 @@
 <div class="footer">
-    <div class="first-column">
-      <img
-        class="footer-logo"
-        src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/logo-icon.png?v=1683005210"
-        alt="Logo"
-      >
-      <p>
-        We’re here to help you create a space that’s both beautiful and comforting, where you can unwind and recharge after
-        a long day. It’s our mission to curate a collection of beautiful and timeless home decor and furnishings, carefully
-        selected to help you create a space you’ll love to be in.
-      </p>
-      <div class="contact-icons">
-        <img
-          src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/instagram-solid-icon.png?v=1683005211"
-          alt="Instagram Icon"
-        >
-        <img
-          src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/whatsapp-solid-icon.png?v=1683005211"
-          alt="WhatsApp Icon"
-        >
-        <img
-          src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/email-solid-icon.png?v=1683005211"
-          alt="Email Icon"
-        >
-      </div>
-    </div>
-    <div class="second-column">
-        <div class="roboto-bold footer-menu_title">About Us</div>
-        <ul>
-          {% for link in linklists['footer-about-us'].links %}
-            <li>
-              <a href="{{ link.url }}">{{ link.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-    </div>
-    <div class="third-column">
-        <div class="roboto-bold footer-menu_title">Info</div>
-        <ul>
-          {% for link in linklists['footer-info-menu'].links %}
-            <li>
-              <a href="{{ link.url }}">{{ link.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-    </div>
-    <div class="fourth-column">
-        <div class="roboto-bold footer-menu_title">Contact Us</div>
-        <ul>
-          {% for link in linklists['footer-contact-us-menu'].links %}
-            <li>
-              <a href="{{ link.url }}">{{ link.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
+    <div class="footer-content">
+        <div class="first-column">
+          <img
+            class="footer-logo"
+            src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/logo-icon.png?v=1683005210"
+            alt="Logo"
+          >
+          <p>
+            We’re here to help you create a space that’s both beautiful and comforting, where you can unwind and recharge after
+            a long day. It’s our mission to curate a collection of beautiful and timeless home decor and furnishings, carefully
+            selected to help you create a space you’ll love to be in.
+          </p>
+          <div class="contact-icons">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/instagram-solid-icon.png?v=1683005211"
+              alt="Instagram Icon"
+            >
+            <img
+              src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/whatsapp-solid-icon.png?v=1683005211"
+              alt="WhatsApp Icon"
+            >
+            <img
+              src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/email-solid-icon.png?v=1683005211"
+              alt="Email Icon"
+            >
+          </div>
+        </div>
+        <div class="second-column">
+            <div class="roboto-bold footer-menu_title">About Us</div>
+            <ul>
+              {% for link in linklists['footer-about-us'].links %}
+                <li>
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+        </div>
+        <div class="third-column">
+            <div class="roboto-bold footer-menu_title">Info</div>
+            <ul>
+              {% for link in linklists['footer-info-menu'].links %}
+                <li>
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+        </div>
+        <div class="fourth-column">
+            <div class="roboto-bold footer-menu_title">Contact Us</div>
+            <ul>
+              {% for link in linklists['footer-contact-us-menu'].links %}
+                <li>
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+        </div>
     </div>
     <p>© 2023 The Sunday Loft. Managed by The Tale Business (UEN 53457442D). All Rights Reserved.</p>
 </div>
@@ -89,5 +91,9 @@
   .footer a {
     text-decoration: none;
     color: #434342;
+  }
+
+  .footer-content {
+    display: flex;
   }
 </style>
