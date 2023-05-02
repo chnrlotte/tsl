@@ -28,7 +28,17 @@
     <div class="second-column">
         <div class="roboto-bold footer-menu_title">About Us</div>
         <ul>
-          {% for link in linklists['about-us-menu'].links %}
+          {% for link in linklists['footer-about-us'].links %}
+            <li>
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+    </div>
+    <div class="third-column">
+        <div class="roboto-bold footer-menu_title">Info</div>
+        <ul>
+          {% for link in linklists['footer-info-menu'].links %}
             <li>
               <a href="{{ link.url }}">{{ link.title }}</a>
             </li>
