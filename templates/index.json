@@ -1,21 +1,9 @@
 {
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
-      "settings": {}
-    },
-    "header": {
-      "type": "header",
-      "settings": {}
-    },
     "rewards-page": {
       "type": "rewards-page",
       "settings": {}
-    },
-    "footer": {
-      "type": "footer",
-      "settings": {}
     }
   },
-  "order": ["announcement-bar", "header", "rewards-page", "footer"]
+  "order": ["rewards-page"]
 }
