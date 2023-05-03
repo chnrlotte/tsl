@@ -17,7 +17,7 @@ h1 {
 }
 
 p {
-  white-space: pre-wrap;
+  white-space: pre-line;
 }
 
 .buttons a {
