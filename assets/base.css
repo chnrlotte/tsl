@@ -38,6 +38,12 @@ h1 {
   margin-bottom: 0;
 }
 
+.lora-regular {
+  font-family: lora, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .buttons {
   gap: 1rem;
   display: inline-flex;
