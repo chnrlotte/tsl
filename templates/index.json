@@ -2,8 +2,11 @@
   "sections": {
     "rewards-page": {
       "type": "rewards-page",
-      "settings": {}
+      "settings": {
+      }
     }
   },
-  "order": ["rewards-page"]
+  "order": [
+    "rewards-page"
+  ]
 }
