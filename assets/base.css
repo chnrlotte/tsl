@@ -8,6 +8,10 @@ body {
   color: #434342;
 }
 
+p {
+  line-height: 1.6rem;
+}
+
 h1 {
   font-size: 1.313rem;
   font-family: lora, serif;
