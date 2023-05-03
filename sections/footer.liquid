@@ -1,67 +1,69 @@
 <div class="footer">
+  <div class="flex-container">
     <div class="footer-content">
-        <div class="first-column">
+      <div class="first-column">
+        <img
+          class="footer-logo"
+          src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/logo-icon.svg?v=1683109428"
+          alt="Logo"
+        >
+        <p>
+          We’re here to help you create a space that’s both beautiful and comforting, where you can unwind and recharge
+          after a long day. It’s our mission to curate a collection of beautiful and timeless home decor and
+          furnishings, carefully selected to help you create a space you’ll love to be in.
+        </p>
+        <div class="contact-icons">
           <img
-            class="footer-logo"
-            src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/logo-icon.svg?v=1683109428"
-            alt="Logo"
+            src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/instagram-solid-icon.svg?v=1683110485"
+            alt="Instagram Icon"
           >
-          <p>
-            We’re here to help you create a space that’s both beautiful and comforting, where you can unwind and recharge after
-            a long day. It’s our mission to curate a collection of beautiful and timeless home decor and furnishings, carefully
-            selected to help you create a space you’ll love to be in.
-          </p>
-          <div class="contact-icons">
-            <img
-              src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/instagram-solid-icon.svg?v=1683110485"
-              alt="Instagram Icon"
-            >
-            <img
-              src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/whatsapp-solid-icon.svg?v=1683110485"
-              alt="WhatsApp Icon"
-            >
-            <img
-              src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/email-solid-icon.svg?v=1683110485"
-              alt="Email Icon"
-            >
-          </div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/whatsapp-solid-icon.svg?v=1683110485"
+            alt="WhatsApp Icon"
+          >
+          <img
+            src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/email-solid-icon.svg?v=1683110485"
+            alt="Email Icon"
+          >
         </div>
-        <div class="footer-menu">
-            <div class="second-column">
-                <div class="roboto-bold footer-menu_title">About Us</div>
-                <ul>
-                  {% for link in linklists['footer-about-us'].links %}
-                    <li>
-                      <a href="{{ link.url }}">{{ link.title }}</a>
-                    </li>
-                  {% endfor %}
-                </ul>
-            </div>
-            <div class="third-column">
-                <div class="roboto-bold footer-menu_title">Info</div>
-                <ul>
-                  {% for link in linklists['footer-info-menu'].links %}
-                    <li>
-                      <a href="{{ link.url }}">{{ link.title }}</a>
-                    </li>
-                  {% endfor %}
-                </ul>
-            </div>
-            <div class="fourth-column">
-                <div class="roboto-bold footer-menu_title">Contact Us</div>
-                <ul>
-                  {% for link in linklists['footer-contact-us-menu'].links %}
-                    <li>
-                      <a href="{{ link.url }}">{{ link.title }}</a>
-                    </li>
-                  {% endfor %}
-                </ul>
-            </div>
+      </div>
+      <div class="footer-menu">
+        <div class="second-column">
+          <div class="roboto-bold footer-menu_title">About Us</div>
+          <ul>
+            {% for link in linklists['footer-about-us'].links %}
+              <li>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
         </div>
+        <div class="third-column">
+          <div class="roboto-bold footer-menu_title">Info</div>
+          <ul>
+            {% for link in linklists['footer-info-menu'].links %}
+              <li>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="fourth-column">
+          <div class="roboto-bold footer-menu_title">Contact Us</div>
+          <ul>
+            {% for link in linklists['footer-contact-us-menu'].links %}
+              <li>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
     </div>
-    <p class="copyright">© 2023 The Sunday Loft. Managed by The Tale Business (UEN 53457442D). All Rights Reserved.</p>
+    <div class="footer-design"></div>
+  </div>
+  <p class="copyright">© 2023 The Sunday Loft. Managed by The Tale Business (UEN 53457442D). All Rights Reserved.</p>
 </div>
-<div class="footer-design"><img src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/footer-design.png?v=1683050878"></div>
 
 <style>
   .footer .first-column .footer-logo {
@@ -114,10 +116,6 @@
     margin-left: 7vw;
   }
 
-  .footer-design img {
-    height: 45vh;
-  }
-
   .footer {
     padding: 5rem 0;
     background-color: #E7EADE;
@@ -125,12 +123,19 @@
 
   .footer-menu {
     gap: 8rem;
-  }  
+  }
 
   .contact-icons {
     margin-top: 4.5vh;
     width: max-content;
     display: flex;
     gap: 1rem;
+  }
+
+  {% comment %} working guides {% endcomment %}
+  .flex-container,
+  .footer-content,
+  .footer-design {
+    border: 1px solid black;
   }
 </style>
