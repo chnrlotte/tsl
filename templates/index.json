@@ -1,12 +1,12 @@
 {
   "sections": {
-    "about-us-page": {
-      "type": "about-us-page",
+    "cart": {
+      "type": "cart",
       "settings": {
       }
     }
   },
   "order": [
-    "about-us-page"
+    "cart"
   ]
 }
