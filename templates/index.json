@@ -1,12 +1,12 @@
 {
   "sections": {
-    "rewards-page": {
-      "type": "rewards-page",
+    "about-us-page": {
+      "type": "about-us-page",
       "settings": {
       }
     }
   },
   "order": [
-    "rewards-page"
+    "about-us-page"
   ]
 }
