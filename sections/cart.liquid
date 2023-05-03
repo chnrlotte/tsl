@@ -1,29 +1,31 @@
-<div class="product-image">
-  {{ 'image' | placeholder_svg_tag }}
-</div>
-
-<div class="cart-item_overview">
-  <div class="row-1">
-    <div class="product-title lora-regular">Boucle Ball Cushion (Beige)</div>
-
-    <div class="cart-price roboto-bold">$35</div>
+<div class="cart-item_group">
+  <div class="product-image">
+    {{ 'image' | placeholder_svg_tag }}
   </div>
 
-  <div class="row-2">
-    <div class="product-variant">30 x 30 cm / Beige</div>
-  </div>
+  <div class="cart-item_overview">
+    <div class="row-1">
+      <div class="product-title lora-regular">Boucle Ball Cushion (Beige)</div>
 
-  <div class="row-3">
-    <div class="quantity-group">
-      <img
-        src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/icon-feather-minus.svg?v=1683142003"
-        alt="Subtract"
-      >
-      <div class="quantity">1</div>
-      <img src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/icon-feather-plus.svg?v=1683142004" alt="Add">
+      <div class="cart-price roboto-bold">$35</div>
     </div>
 
-    <div class="product-remove">remove</div>
+    <div class="row-2">
+      <div class="product-variant">30 x 30 cm / Beige</div>
+    </div>
+
+    <div class="row-3">
+      <div class="quantity-group">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/icon-feather-minus.svg?v=1683142003"
+          alt="Subtract"
+        >
+        <div class="quantity">1</div>
+        <img src="https://cdn.shopify.com/s/files/1/0723/0527/9273/files/icon-feather-plus.svg?v=1683142004" alt="Add">
+      </div>
+
+      <div class="product-remove">remove</div>
+    </div>
   </div>
 </div>
 
@@ -35,7 +37,6 @@
   }
 
   .cart-item_overview {
-    border: 1px solid black;
     width: 28vw;
   }
 
@@ -62,8 +63,13 @@
   }
 
   .product-image {
-    border: 1px solid black;
     width: 12rem;
     height: 12rem;
+  }
+
+  .product-image,
+  .cart-item_group,
+  .cart-item_overview {
+    border: 1px solid black;
   }
 </style>
