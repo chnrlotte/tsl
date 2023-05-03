@@ -9,8 +9,11 @@
   </head>
 
   <body>
+    {% sections 'header' %}
 
     {{ content_for_layout }}
+
+    {% sections 'footer' %}
     
   </body>
  </html>
