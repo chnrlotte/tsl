@@ -1,3 +1,5 @@
 {% assign product = collections.all.products['boucle-ball-cushion-beige'] %}
 
-<img src="{{ product.images | image_url }}">
+{% for image in product.images %}
+  <img src="{{ product.images | image_url }}">
+{% endfor %}
