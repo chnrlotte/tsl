@@ -8,14 +8,14 @@
 
 {{ product.title }}
 
-{{ product.price | money }}
+<p id="product-price">{{ product.price | money }}</p>
 
 {{ product.description }}
 
 <!-- product form -->
 {% form 'product', product %}
   <!-- form content -->
-  <select name="id">
+  <select name="id" id="select-variant" onchange="selectedVariant">
     {% for variant in product.variants %}
       <option
         value="{{ variant.id }}"
@@ -33,3 +33,11 @@
   <input type="submit" value="Add to cart">
   {{ form | payment_button }}
 {% endform %}
+
+<script>
+  function variantSelected() {
+    var selectedVariantId = document.getElementById("select-variant").value;
+    {% assign selectedVariant = product.variants | where: "id", selectedVariantId | first %}
+    document.getElementById("product-price").innerHTML = "{{ selectedVariant.price | money }}";
+  }
+</script>
