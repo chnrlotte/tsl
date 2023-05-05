@@ -35,13 +35,12 @@
 {% endform %}
 
 <script>
-  function formatMoney(price) {
-    var format = '{{ shop.money_format }}';
-    var formattedPrice = format.replace('{{ amount }}', price);
-    return formattedPrice;
-  }
+      function formatMoney(price) {
+      var formattedPrice = '$' + (price/100).toFixed(2);
+      return formattedPrice;
+    }
 
-  function updatePrice() {
+      function updatePrice() {
     var variantId = document.getElementsByName("id")[0].value;
     var selectedVariant = {{ product.variants | json }}.find(function(variant) {
       return variant.id == variantId;
