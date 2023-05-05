@@ -4,7 +4,17 @@
 
 {% assign product = all_products['monday-rug'] %}
 
-<div class="product">
+
+<!-- product form -->
+{% form 'product' %}
+  <!-- form content -->
+
+  <input type="submit" value="Add to cart">
+{% endform %}
+
+
+
+<!-- <div class="product">
   <div class="product__image">
     <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}">
   </div>
@@ -27,3 +37,4 @@
     </div>
   </div>
 </div>
+ -->
