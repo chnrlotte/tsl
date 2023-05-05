@@ -45,6 +45,6 @@
     var selectedVariant = {{ product.variants | json }}.find(function(variant) {
       return variant.id == variantId;
     });
-    document.getElementById("variant-price").innerHTML = " - " + formatMoney(selectedVariant.price);
+    document.getElementById("variant-price").innerHTML = formatMoney(selectedVariant.price);
   }
 </script>
