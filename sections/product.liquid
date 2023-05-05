@@ -12,7 +12,7 @@
 
 {{ product.title }}
 
-{% if available %}
+{% if product.available %}
   {% if product.price_varies %}
     <p>From {{ product.price_min | money }}</p>
   {% else %}
