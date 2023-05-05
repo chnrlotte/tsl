@@ -4,7 +4,9 @@
 
 {% assign product = all_products['monday-rug'] %}
 
-<img src="{{ collection.product.images | img_url }}" alt="{{ product.title }} Image Thumbnail">
+{% for image in product.images %}
+  <img src="{{ image.src | img_url }}" alt="{{ product.title }} - {{ image.alt | escape }}">
+{% endfor %}
 
 <!-- product form -->
 {% form 'product', product %}
