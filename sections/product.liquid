@@ -35,8 +35,9 @@
 {% endform %}
 
 <script>
+  
       function formatMoney(price) {
-      var formattedPrice = '$' + (price/100).toFixed(2);
+      var formattedPrice = '{{ product.price | money }}';
       return formattedPrice;
     }
 
