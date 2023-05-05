@@ -34,9 +34,13 @@
   {{ form | payment_button }}
 {% endform %}
 
+<span id="demo"></span>
+
 <script>
   function updateProductPrice() {
-    var variantPrice = '{{ selected_variant.price }}';
-    document.getElementById("product-price").innerHTML = variantPrice;
+    var selectedVariant = {{ product.variants | json }}.find(function(variant) {
+      return variant.id == variantId;
+    });
+    document.getElementById("demo").innerHTML = selectedVariant;
   }
 </script>
