@@ -32,19 +32,17 @@
 {% endform %}
 
 <script>
-    <script>
-    var variantPriceData = JSON.parse('{{ product | json }}').variants;
-    var variantSelect = document.getElementById('variant-select');
-    var productPrice = document.querySelector('.product-price');
+  var variantPriceData = {{ product.variants | json }};
+  var variantSelect = document.getElementById('variant-select');
+  var productPrice = document.querySelector('.product-price');
 
-    variantSelect.addEventListener('change', function() {
-      var selectedVariantId = variantSelect.value;
-      var selectedVariant = variantPriceData.find(function(variant) {
-        return variant.id === selectedVariantId;
-      });
-      productPrice.textContent = Shopify.formatMoney(selectedVariant.price, '{{ shop.currency }}');
+  variantSelect.addEventListener('change', function() {
+    var selectedVariantId = variantSelect.value;
+    var selectedVariant = variantPriceData.find(function(variant) {
+      return variant.id === selectedVariantId;
     });
-  </script>
+    productPrice.textContent = Shopify.formatMoney(selectedVariant.price, '{{ shop.currency }}');
+  });
 </script>
 
 <!--
