@@ -4,6 +4,8 @@
 
 {% assign product = all_products['monday-rug'] %}
 
+<img src="{{ product.featured_image | img_url }}" alt="{{ product.title }} - {{ image.alt | escape }}">
+
 {% for image in product.images %}
   <img src="{{ image.src | img_url }}" alt="{{ product.title }} - {{ image.alt | escape }}">
 {% endfor %}
