@@ -37,7 +37,7 @@
 <script>
   
       function formatMoney(price) {
-      var formattedPrice = '{{ price | money }}';
+      var formattedPrice = {{ product.price | json }};
       return formattedPrice;
     }
 
