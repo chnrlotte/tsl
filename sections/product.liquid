@@ -39,9 +39,12 @@
 <script>
   function updatePrice() {
     var selectedVariantId = document.getElementById("select-variant").value;
-    var price = '{{ variant.price }}';
-    if (selectedVariantId == '{{ product.variants }}') {
-      document.getElementById("product-price").innerHTML = price;
-    }
+    var selectedVariantPrice = '';
+    {% for variant in product.variants %}
+      {% if variant.id == selectedVariantId %}
+        selectedVariantPrice = '{{ variant.price | money }}';
+      {% endif %}
+    {% endfor %}
+    document.getElementById("product-price").innerHTML = selectedVariantPrice;
   }
 </script>
