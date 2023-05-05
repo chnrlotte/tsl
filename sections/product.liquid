@@ -36,7 +36,7 @@
 
 <script>
   function updateProductPrice() {
-    var priceVariant = '{{ product.price | json }}';
+    var priceVariant = '{{ product.variants | json }}';
     document.getElementById("product-price").innerHTML = priceVariant;
   }
 </script>
