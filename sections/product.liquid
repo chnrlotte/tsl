@@ -35,11 +35,17 @@
 {% endform %}
 
 <script>
-function updatePrice() {
-  var variantId = document.getElementsByName("id")[0].value;
-  var selectedVariant = {{ product.variants | json }}.find(function(variant) {
-    return variant.id == variantId;
-  });
-  document.getElementById("variant-price").innerHTML = " - " + selectedVariant.price | money;
-}
+  function formatMoney(price) {
+    var format = '{{ shop.money_format }}';
+    var formattedPrice = format.replace('{{ amount }}', price);
+    return formattedPrice;
+  }
+
+  function updatePrice() {
+    var variantId = document.getElementsByName("id")[0].value;
+    var selectedVariant = {{ product.variants | json }}.find(function(variant) {
+      return variant.id == variantId;
+    });
+    document.getElementById("variant-price").innerHTML = " - " + formatMoney(selectedVariant.price);
+  }
 </script>
