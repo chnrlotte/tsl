@@ -43,7 +43,7 @@
     var variants = {{ product.variants | json }};
     for (var i = 0; i < variants.length; i++) {
       if (variants[i].id == selectedVariantId) {
-        selectedVariantPrice = {{ variants[i].price | money | json }};
+        selectedVariantPrice = '{{ variants[i].price | money | json }}';
       }
     }
     console.log('selectedVariantPrice:', selectedVariantPrice);
