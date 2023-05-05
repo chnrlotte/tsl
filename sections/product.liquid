@@ -35,17 +35,16 @@
 {% endform %}
 
 <script>
-  function formatMoney(price) {
-    var formattedPrice = '{{ price | money }}';
-    return formattedPrice;
-  }
+      function formatMoney(price) {
+      var formattedPrice = '$' + (price/100).toFixed(2);
+      return formattedPrice;
+    }
 
-  function updatePrice() {
+      function updatePrice() {
     var variantId = document.getElementsByName("id")[0].value;
     var selectedVariant = {{ product.variants | json }}.find(function(variant) {
       return variant.id == variantId;
     });
-    var formattedPrice = '{{ selectedVariant.price | money }}';
-    document.getElementById("variant-price").innerHTML = " - " + formattedPrice;
+    document.getElementById("variant-price").innerHTML = " - " + formatMoney(selectedVariant.price);
   }
 </script>
