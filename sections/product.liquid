@@ -4,6 +4,8 @@
 
 {% assign product = all_products['monday-rug'] %}
 
+<img src="{{ product.images | img_url }}" alt="{{ product.title }} Image Thumbnail">
+
 <!-- product form -->
 {% form 'product', product %}
   <!-- form content -->
@@ -21,8 +23,6 @@
   </select>
 
   <input type="text" name="quantity" min="1" value="1">
-
-  <input type="text" name="properties[Monogram]">
 
   <input type="submit" value="Add to cart">
   {{ form | payment_button }}
