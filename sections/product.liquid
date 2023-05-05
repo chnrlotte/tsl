@@ -41,11 +41,12 @@
     var selectedVariantId = document.getElementById("select-variant").value;
     var selectedVariantPrice = '';
     {% for variant in product.variants %}
+      console.log('Variant ID:', variant.id);
+  console.log('Selected Variant ID:', selectedVariantId);
       {% if variant.id == selectedVariantId %}
+        console.log('Variant Matched:', variant);
         selectedVariantPrice = '{{ variant.price | money }}';
-    console.log('variant.price:', '{{ variant.price | money }}');
       {% endif %}
-      console.log(selectedVariantId);
     {% endfor %}
     document.getElementById("product-price").innerHTML = selectedVariantPrice;
   }
