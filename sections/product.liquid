@@ -43,7 +43,7 @@
     var variants = {{ product.variants | json }};
     for (var i = 0; i < variants.length; i++) {
       if (variants[i].id == selectedVariantId) {
-        selectedVariantPrice = ((variants[i].price)/100).toFixed(2);
+        selectedVariantPrice = '$' + ((variants[i].price)/100).toFixed(2);
       }
     }
     console.log('selectedVariantPrice:', selectedVariantPrice);
