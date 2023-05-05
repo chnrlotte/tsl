@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     {% comment %} adobe fonts {% endcomment %}
@@ -15,8 +15,12 @@
     {{ content_for_layout }}
 
     {% section 'footer' %}
-    
-   {% include 'smile-initializer' %}
 
-</body>
- </html>
+    {% include 'smile-initializer' %}
+    <script>
+      Shopify.formatMoney = function(cents, format) {
+        // ...
+      };
+    </script>
+  </body>
+</html>
