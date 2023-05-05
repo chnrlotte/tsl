@@ -36,9 +36,12 @@
 
 <span id="demo"></span>
 
+
+{% assign variant = '' %}
+{{ variant.price | money }}
 <script>
   function updateProductPrice() {
-    var selectedVariantId = document.getElementById("select-variant").value;
+    var variant = document.getElementById("select-variant").value;
     document.getElementById("demo").innerHTML = selectedVariantId;
   }
 </script>
