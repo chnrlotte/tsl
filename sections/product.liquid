@@ -15,7 +15,7 @@
 <!-- product form -->
 {% form 'product', product %}
   <!-- form content -->
-  <select name="id" id="select-variant" onchange="selectedVariant">
+  <select name="id" id="select-variant" onchange="selectedVariant()">
     {% for variant in product.variants %}
       <option
         value="{{ variant.id }}"
