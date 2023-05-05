@@ -37,7 +37,7 @@
 <script>
   function formatMoney(price) {
     var format = '{{ shop.money_format }}';
-    var formattedPrice = format.replace(price);
+    var formattedPrice = format.replace('{{ variant.price }}', price);
     return formattedPrice;
   }
 
