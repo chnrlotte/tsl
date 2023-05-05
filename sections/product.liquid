@@ -11,7 +11,7 @@
 <p id="product-price">{{ product.price | money }}</p>
 
 {% for variant in product.variants %}          			
-    {{variant.price}}          			
+    {{variant.price | money }}          			
 {% endfor %}
 
 {{ product.description }}
@@ -38,4 +38,8 @@
   {{ form | payment_button }}
 {% endform %}
 
-<scripy></scripy>
+<script>
+  function updatePrice() {
+    
+  }
+</script>
