@@ -8,13 +8,7 @@
 
 {{ product.title }}
 
-<p id="product-price">
-  {% for variant in product.variants %}
-    {% if variant.id == selectedVariantID %}
-      {{ variant.price | money }}
-    {% endif %}
-  {% endfor %}
-</p>
+<p id="product-price">{{ product.price | money }}</p>
 
 {{ product.description }}
 
@@ -45,6 +39,6 @@
 <script>
   function updateProductPrice() {
     var selectedVariantID = document.getElementById("select-variant").value;
-    document.getElementById("product-price").innerHTML = ;
+    document.getElementById("demo").innerHTML = ;
   }
 </script>
