@@ -39,6 +39,7 @@
 <script>
   function updateProductPrice() {
     var selectedVariantID = document.getElementById("select-variant").value;
-    document.getElementById("demo").innerHTML = selectedVariantID;
+    var selectedVariantPrice = selectedVariantID.price | money;
+    document.getElementById("demo").innerHTML = selectedVariantPrice;
   }
 </script>
