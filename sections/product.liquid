@@ -45,7 +45,7 @@
         selectedVariantPrice = '{{ variant.price | money }}';
       {% endif %}
       console.log(selectedVariantId);
-      console.log(selectedVariantPrice);
+      console.log('price: ', selectedVariantPrice);
     {% endfor %}
     document.getElementById("product-price").innerHTML = selectedVariantPrice;
   }
