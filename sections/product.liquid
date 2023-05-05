@@ -8,18 +8,14 @@
 
 {{ product.title }}
 
-<p id="product-price">{{ product.price | money }}</p>
-
-{% for variant in product.variants %}          			
-    {{variant.price | money }}          			
-{% endfor %}
+{{ product.price | money }}
 
 {{ product.description }}
 
 <!-- product form -->
 {% form 'product', product %}
   <!-- form content -->
-  <select name="id" onchange="updatePrice()">
+  <select name="id">
     {% for variant in product.variants %}
       <option
         value="{{ variant.id }}"
@@ -37,9 +33,3 @@
   <input type="submit" value="Add to cart">
   {{ form | payment_button }}
 {% endform %}
-
-<script>
-  function updatePrice() {
-    
-  }
-</script>
