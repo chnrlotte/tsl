@@ -10,6 +10,9 @@
 
 <img src="{{ product.featured_image | img_url }}" alt="{{ product.title }} - {{ image.alt | escape }}">
 
+<img src="{{ product.images | img_url }}" alt="{{ product.title }} - {{ product.images[0].alt | escape }}">
+
+
 <!-- product form -->
 {% form 'product', product %}
   <!-- form content -->
