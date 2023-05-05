@@ -35,7 +35,7 @@
 {% endform %}
 
 <script>
-  function variantSelected() {
+  function selectedVariant() {
     var selectedVariantId = document.getElementById("select-variant").value;
     {% assign selectedVariant = product.variants | where: "id", selectedVariantId | first %}
     document.getElementById("product-price").innerHTML = '{{ selectedVariant.price | money }}';
