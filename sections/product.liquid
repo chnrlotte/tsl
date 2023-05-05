@@ -1,4 +1,5 @@
 {% assign product = all_products['monday-rug'] %}
+{% assign variant = '' %}
 
 {% for image in product.images %}
   <img src="{{ image.src | img_url }}" alt="{{ product.title }} - {{ image.alt | escape }}">
@@ -37,11 +38,13 @@
 <span id="demo"></span>
 
 
-{% assign variant = '' %}
 {{ variant.price | money }}
+
 <script>
   function updateProductPrice() {
-    var variant = document.getElementById("select-variant").value;
-    document.getElementById("demo").innerHTML = selectedVariantId;
+    var selectedVariantId = document.getElementById("select-variant").value;
+    var selectedVariant = {{ product.variants | where: "id", selectedVariantId | first | json }};
+    var formattedPrice = "{{ shop.currency_symbol }}{{ selectedVariant.price | money }}";
+    document.getElementById("demo").innerHTML = formattedPrice;
   }
 </script>
