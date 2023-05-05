@@ -17,14 +17,9 @@
 <!-- product form -->
 {% form 'product', product %}
   <!-- form content -->
-  <select name="id">
+  <select name="id" id="variant-select">
     {% for variant in product.variants %}
-      <option
-        value="{{ variant.id }}"
-        {% if variant == product.selected_or_first_available_variant %}
-          selected="selected"
-        {% endif %}
-      >
+      <option value="{{ variant.id }}" data-variant-price="{{ variant.price }}">
         {{ variant.title }} - {{ variant.price | money }}
       </option>
     {% endfor %}
