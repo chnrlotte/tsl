@@ -36,7 +36,7 @@
 
 <script>
       function formatMoney(price) {
-      var formattedPrice = {{ selectedVariant.price | money }};
+      var formattedPrice = '$' + (price/100).toFixed(2);
       return formattedPrice;
     }
 
@@ -45,6 +45,6 @@
     var selectedVariant = {{ product.variants | json }}.find(function(variant) {
       return variant.id == variantId;
     });
-    document.getElementById("variant-price").innerHTML = formatMoney(selectedVariant.price);
+    document.getElementById("variant-price").innerHTML = " - " + formatMoney(selectedVariant.price);
   }
 </script>
