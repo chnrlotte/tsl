@@ -4,38 +4,48 @@
 
 {% assign product = all_products['monday-rug'] %}
 
-
 <!-- product form -->
 {% form 'product', product %}
   <!-- form content -->
+  <select name="id">
+    {% for variant in product.variants %}
+      <option
+        value="{{ variant.id }}"
+        {% if variant == product.selected_or_first_available_variant %}
+          selected="selected"
+        {% endif %}
+      >
+        {{ variant.title }} - {{ variant.price | money }}
+      </option>
+    {% endfor %}
+  </select>
 
   <input type="submit" value="Add to cart">
   {{ form | payment_button }}
 {% endform %}
 
-
-
-<!-- <div class="product">
-  <div class="product__image">
-    <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}">
-  </div>
-  <div class="product__info">
-    <h1 class="product__title">{{ product.title }}</h1>
-    <p class="product__price">{{ product.price | money }}</p>
-    <form method="post" action="/cart/add">
-      <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-      <input type="submit" value="Add to cart">
-    </form>
-    <div class="product__description">
-      {{ product.description }}
+<!--
+  <div class="product">
+    <div class="product__image">
+      <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}">
     </div>
-    <div class="product__details">
-      <ul>
-        <li>Material: {{ product.metafields.material }}</li>
-        <li>Size: {{ product.metafields.size }}</li>
-        <li>Color: {{ product.metafields.color }}</li>
-      </ul>
+    <div class="product__info">
+      <h1 class="product__title">{{ product.title }}</h1>
+      <p class="product__price">{{ product.price | money }}</p>
+      <form method="post" action="/cart/add">
+        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+        <input type="submit" value="Add to cart">
+      </form>
+      <div class="product__description">
+        {{ product.description }}
+      </div>
+      <div class="product__details">
+        <ul>
+          <li>Material: {{ product.metafields.material }}</li>
+          <li>Size: {{ product.metafields.size }}</li>
+          <li>Color: {{ product.metafields.color }}</li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
- -->
+-->
