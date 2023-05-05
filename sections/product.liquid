@@ -12,14 +12,19 @@
 
 {{ product.title }}
 
-<p class="product-price">{{ product.price | money }}</p>
+{{ product.price | money }}
 
 <!-- product form -->
 {% form 'product', product %}
   <!-- form content -->
-  <select name="id" id="variant-select">
+  <select name="id">
     {% for variant in product.variants %}
-      <option value="{{ variant.id }}" data-variant-price="{{ variant.price }}">
+      <option
+        value="{{ variant.id }}"
+        {% if variant == product.selected_or_first_available_variant %}
+          selected="selected"
+        {% endif %}
+      >
         {{ variant.title }} - {{ variant.price | money }}
       </option>
     {% endfor %}
@@ -30,21 +35,6 @@
   <input type="submit" value="Add to cart">
   {{ form | payment_button }}
 {% endform %}
-
-<script>
-  var variantPriceData = {{ product.variants | json }};
-  var variantSelect = document.getElementById('variant-select');
-  var productPrice = document.querySelector('.product-price');
-
-  variantSelect.addEventListener('change', function() {
-    var selectedVariantId = variantSelect.value;
-    var selectedVariant = variantPriceData.find(function(variant) {
-      return variant.id === selectedVariantId;
-    });
-    productPrice.textContent = Shopify.formatMoney(selectedVariant.price, '{{ shop.currency }}');
-  });
-</script>
-
 
 <!--
   <div class="product">
