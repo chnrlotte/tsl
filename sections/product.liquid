@@ -1,7 +1,3 @@
-{% comment %}
-  This is a sample product page for a single product
-{% endcomment %}
-
 {% assign product = all_products['monday-rug'] %}
 
 {% for image in product.images %}
@@ -37,29 +33,3 @@
   <input type="submit" value="Add to cart">
   {{ form | payment_button }}
 {% endform %}
-
-<!--
-  <div class="product">
-    <div class="product__image">
-      <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}">
-    </div>
-    <div class="product__info">
-      <h1 class="product__title">{{ product.title }}</h1>
-      <p class="product__price">{{ product.price | money }}</p>
-      <form method="post" action="/cart/add">
-        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-        <input type="submit" value="Add to cart">
-      </form>
-      <div class="product__description">
-        {{ product.description }}
-      </div>
-      <div class="product__details">
-        <ul>
-          <li>Material: {{ product.metafields.material }}</li>
-          <li>Size: {{ product.metafields.size }}</li>
-          <li>Color: {{ product.metafields.color }}</li>
-        </ul>
-      </div>
-    </div>
-  </div>
--->
