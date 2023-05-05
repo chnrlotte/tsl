@@ -36,16 +36,18 @@
 
 <script>
   
-      function formatMoney(price) {
-      var formattedPrice = {{ product.price | money | json }};
-      return formattedPrice;
-    }
+     function formatMoney(price) {
+  var formattedPrice = '{{ price | money }}';
+  return formattedPrice;
+}
 
-      function updatePrice() {
-    var variantId = document.getElementsByName("id")[0].value;
-    var selectedVariant = {{ product.variants | json }}.find(function(variant) {
-      return variant.id == variantId;
-    });
-    document.getElementById("variant-price").innerHTML = formatMoney(selectedVariant.price);
-  }
+
+     function updatePrice() {
+  var variantId = document.getElementsByName("id")[0].value;
+  var selectedVariant = {{ product.variants | json }}.find(function(variant) {
+    return variant.id == variantId;
+  });
+  document.getElementById("variant-price").innerHTML = " - " + formatMoney(selectedVariant.price);
+}
+
 </script>
