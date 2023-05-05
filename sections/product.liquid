@@ -43,16 +43,10 @@
     var variants = {{ product.variants | json }};
     for (var i = 0; i < variants.length; i++) {
       if (variants[i].id == selectedVariantId) {
-        selectedVariantPrice = variants[i].price;
+        selectedVariantPrice = {{ variants[i].price | money | json }};
       }
     }
-    var formattedPrice = selectedVariantPrice.toLocaleString('en-US', {
-      style: 'currency',
-      currency: '{{ shop.currency }}',
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    });
-    console.log('selectedVariantPrice:', formattedPrice);
-    document.getElementById("product-price").innerHTML = formattedPrice;
+    console.log('selectedVariantPrice:', selectedVariantPrice);
+    document.getElementById("product-price").innerHTML = selectedVariantPrice;
   }
 </script>
