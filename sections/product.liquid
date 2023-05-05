@@ -43,9 +43,9 @@
     {% for variant in product.variants %}
       {% if variant.id == selectedVariantId %}
         selectedVariantPrice = '{{ variant.price | money }}';
+    console.log('variant.price:', '{{ variant.price | money }}');
       {% endif %}
       console.log(selectedVariantId);
-      console.log('price: ', selectedVariantPrice);
     {% endfor %}
     document.getElementById("product-price").innerHTML = selectedVariantPrice;
   }
