@@ -36,9 +36,9 @@
 
 <script>
   function updateProductPrice() {
-    var priceVariant = {{ product.variants | json }}.find(function(variant) {
+    var variantPrice = {{ product.title }};
       return variant.id == variantId;
     });
-    document.getElementById("product-price").innerHTML = priceVariant;
+    document.getElementById("product-price").innerHTML = variantPrice;
   }
 </script>
